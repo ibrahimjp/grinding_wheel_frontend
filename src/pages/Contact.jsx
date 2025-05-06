@@ -69,7 +69,7 @@ const Contact = () => {
               <div className="contact-info-card">
                 <div className="contact-map">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5569631828794!2d78.48642287526678!3d17.433036583462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a1cfd24ba67%3A0xe63dab2e4afa9cdd!2s5-4-92%2F2%2F1%2C%20Hyderbasthi%2C%20Rani%20Gunj%2C%20Secunderabad%2C%20Telangana%20500003!5e0!3m2!1sen!2sin!4v1746536454619!5m2!1sen!2sin"
                     width="100%"
                     height="400"
                     style={{ border: 0, borderRadius: '12px' }}
@@ -90,7 +90,7 @@ const Contact = () => {
                         </div>
                         <div className="detail-content">
                           <h5>Phone Number</h5>
-                          <p>010-020-0340</p>
+                          <p>088856 56752</p>
                         </div>
                       </div>
                     </div>
@@ -105,7 +105,7 @@ const Contact = () => {
                         </div>
                         <div className="detail-content">
                           <h5>Business Email</h5>
-                          <p>burhaniabron@gmail.com</p>
+                          <p><small>burhaniabron@gmail.com</small></p>
                         </div>
                       </div>
                     </div>
@@ -120,7 +120,7 @@ const Contact = () => {
                         </div>
                         <div className="detail-content">
                           <h5>Office Location</h5>
-                          <p>Ahmedabaad</p>
+                          <p>X Road, Bolaram Nagar, Rani Gunj, Secunderabad</p>
                         </div>
                       </div>
                     </div>
@@ -135,7 +135,7 @@ const Contact = () => {
                         </div>
                         <div className="detail-content">
                           <h5>Working Hours</h5>
-                          <p>Mon-Fri: 9AM - 6PM</p>
+                          <p>Mon-Sat: 10AM - 8PM</p>
                         </div>
                       </div>
                     </div>

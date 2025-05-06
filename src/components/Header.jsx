@@ -23,7 +23,7 @@ const Header = () => {
             <div className="col-lg-8 col-md-8">
               <ul className="info">
                 <li><i className="fa fa-envelope"></i> burhaniabron@gmail.com </li>
-                <li><i className="fa fa-map"></i> Trinoxabrasives.com</li>
+                <li><i className="fa fa-map"></i>Trinoxabrasives.com</li>
               </ul>
             </div>
             <div className="col-lg-4 col-md-4">
@@ -44,7 +44,7 @@ const Header = () => {
             <div className="col-12">
               <nav className="main-nav">
                 <a href="/" className="logo">
-                  <h1>ABRASIVE PRODUCT CATALOG</h1>
+                  <h1>Burhani&nbsp;Traders</h1>
                 </a>
                 <ul className="nav">
                   <li><a href="/" className={selectMenu === 0 ? 'active' : ''} onClick={() => setSelectMenu(0)}>Home</a></li>

@@ -4,10 +4,9 @@ const Footer = () => {
   return (
     <footer>
     <div className="container">
-      <div className="col-lg-8">
-        <p>Copyright © 2025 Trinox
-        
-        Design: <a rel="nofollow" href="https://ibrahim-portfolio-psi.vercel.app/" target="_blank">Ibrahim</a></p>
+      <div className="">
+        <p>Copyright © 2025 Trinox , Address :
+        X Road, Bolaram Nagar, Rani Gunj, Secunderabad, Telangana 500003</p>
       </div>
     </div>
   </footer>
