@@ -1,0 +1,23 @@
+{
+  "extends": ["react-app", "react-app/jest"],
+  "rules": {
+    "no-restricted-globals": ["error", {
+      "name": "location",
+      "message": "Use window.location instead"
+    }],
+    "no-unused-expressions": "off"
+  },
+  "globals": {
+    "jQuery": "readonly",
+    "$": "readonly"
+  },
+  "overrides": [
+    {
+      "files": ["src/assets/js/*.js"],
+      "rules": {
+        "no-restricted-globals": "off",
+        "no-unused-expressions": "off"
+      }
+    }
+  ]
+}

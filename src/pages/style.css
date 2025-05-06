@@ -1,0 +1,38 @@
+.work-1{
+    background-image: url(../assets/images/work1.jpg);
+      background-size: cover;
+        background-position: center;
+          background-repeat: no-repeat;
+            height: 100vh; 
+    background-color: blue;
+}
+.work-2{
+    background-image: url(../assets/images/work2.jpg);
+      background-size: cover;
+        background-position: center;
+          background-repeat: no-repeat;
+            height: 100vh; 
+    background-color: red;
+}
+.work-3{
+    background-color: green;
+    background-image: url(../assets/images/work3.jpg);
+      background-size: cover;
+        background-position: center;
+          background-repeat: no-repeat;
+            height: 100vh; 
+}
+
+.work4{
+    background-color: yellow;
+    background-image: url(../assets/images/work4.jpg);
+      background-size: cover;
+        background-position: center;
+          background-repeat: no-repeat;
+            height: 100vh; 
+}
+.custom-popover {
+  --bs-popover-max-width: 200px;
+  --bs-popover-header-bg: #673ab7;
+}
+
