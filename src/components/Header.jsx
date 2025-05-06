@@ -31,7 +31,7 @@ const Header = () => {
                 <li><a href="#"><i className="fab fa-facebook"></i></a></li>
                 <li><a href="https://x.com/minthu" target="_blank"><i className="fab fa-twitter"></i></a></li>
                 <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
-                <li><a href="#"><i className="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.instagram.com/abron_trinoxabrasives?igsh=NHVyZGJhaGx4ZXF4&utm_source=qr"><i className="fab fa-instagram"></i></a></li>
               </ul>
             </div>
           </div>
