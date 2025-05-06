@@ -48,9 +48,9 @@ const AbrasiveCatalog = () => {
               <h1>Trinox</h1>
             </a>
             <ul className="nav">
-              <li><a href="/index">Home</a></li>
-              <li><a href="/products">Products</a></li>
-              <li><a href="/catalog" className="active">Catalog</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/properties">Products</a></li>
+              <li><a href="/property-details" className="active">Catalog</a></li>
               <li><a href="/contact">Contact Us</a></li>
             </ul>
             <a className="menu-trigger">

@@ -48,8 +48,8 @@ const Header = () => {
                 </a>
                 <ul className="nav">
                   <li><a href="/" className={selectMenu === 0 ? 'active' : ''} onClick={() => setSelectMenu(0)}>Home</a></li>
-                  <li><a href="/properties" className={selectMenu === 1 ? 'active' : ''} onClick={() => setSelectMenu(1)}>Properties</a></li>
-                  <li><a href="/property-details" className={selectMenu === 2 ? 'active' : ''} onClick={() => setSelectMenu(2)}>Property Details</a></li>
+                  <li><a href="/properties" className={selectMenu === 1 ? 'active' : ''} onClick={() => setSelectMenu(1)}>Products</a></li>
+                  <li><a href="/property-details" className={selectMenu === 2 ? 'active' : ''} onClick={() => setSelectMenu(2)}>Catalog</a></li>
                   <li><a href="/contact" className={selectMenu === 3 ? 'active' : ''} onClick={() => setSelectMenu(3)}>Contact Us</a></li>
                 </ul>
                 <a className="menu-trigger">

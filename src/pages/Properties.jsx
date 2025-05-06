@@ -29,8 +29,8 @@ function Properties() {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <span className="breadcrumb"><a href="#">Home</a> / Properties</span>
-              <h3>Properties</h3>
+              <span className="breadcrumb"><a href="#">Home</a> / Products</span>
+              <h3>Trinox Abrasive Products</h3>
             </div>
           </div>
         </div>
