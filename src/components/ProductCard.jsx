@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import './uiVerseBtn.css';
+import './buyButtonUiVerse.css';
 function ProductCard({ product }) {
   const [showDialog, setShowDialog] = useState(false);
 
@@ -27,7 +28,7 @@ function ProductCard({ product }) {
 
         <div className="main-button flex justify-between">
           {/* Buy Button */}
-          <button className="btn w-28 btn-success">Buy</button>
+          <button className="buyButtonUiVerse">Buy</button>
 
           {/* Show Specifications Button */}
           <button type="button" className="uiVerseBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">

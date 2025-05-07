@@ -1,22 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import './preloader.css'
+import Preloader from '../components/Preloader';
+import './HamburgerIcon.css'
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectMenu, setSelectMenu] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Check if the screen is mobile size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 991);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <div>
-      <div id="js-preloader" className="js-preloader">
-        <div className="preloader-inner">
-          <span className="dot"></span>
-          <div className="dots">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
+      <Preloader />
       <div className="sub-header">
         <div className="container">
           <div className="row">
@@ -39,20 +48,41 @@ const Header = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <nav className="main-nav">
+                {!isMobile && (
+                    <nav className="main-nav">
                 <a href="/" className="logo">
                   <h1>Burhani&nbsp;Traders</h1>
                 </a>
-                <ul className="nav">
-                  <li><a href="/" className={selectMenu === 0 ? 'active' : ''} onClick={() => setSelectMenu(0)}>Home</a></li>
-                  <li><a href="/properties" className={selectMenu === 1 ? 'active' : ''} onClick={() => setSelectMenu(1)}>Products</a></li>
-                  <li><a href="/property-details" className={selectMenu === 2 ? 'active' : ''} onClick={() => setSelectMenu(2)}>Catalog</a></li>
-                  <li><a href="/contact" className={selectMenu === 3 ? 'active' : ''} onClick={() => setSelectMenu(3)}>Contact Us</a></li>
-                </ul>
-                <a className="menu-trigger">
-                  <span>Menu</span>
+
+                  <ul className="nav">
+                    <li><a href="/" className={selectMenu === 0 ? 'active' : ''} onClick={() => setSelectMenu(0)}>Home</a></li>
+                    <li><a href="/properties" className={selectMenu === 1 ? 'active' : ''} onClick={() => setSelectMenu(1)}>Products</a></li>
+                    <li><a href="/property-details" className={selectMenu === 2 ? 'active' : ''} onClick={() => setSelectMenu(2)}>Catalog</a></li>
+                    <li><a href="/contact" className={selectMenu === 3 ? 'active' : ''} onClick={() => setSelectMenu(3)}>Contact Us</a></li>
+                  </ul>
+                </nav>
+                )}
+                {isMobile && (
+                  <nav>
+                   <a href="/">
+                  <h1 className='mt-6'>Burhani&nbsp;Traders</h1>
                 </a>
-              </nav>
+                  <div class="hamburger-menu ">
+                    <input id="menu__toggle" type="checkbox" />
+                    <label class="menu__btn mt-3" for="menu__toggle">
+                      <span></span>
+                    </label>
+
+                    <ul class="menu__box">
+                      <li><a class="menu__item" href="/">Home</a></li>
+                      <li><a class="menu__item" href="/properties">Products</a></li>
+                      <li><a class="menu__item" href="/property-details">Catalog</a></li>
+                      <li><a class="menu__item" href="/contact">Contact Us</a></li>
+                    </ul>
+                  </div>
+                  </nav>
+                )}
+             
             </div>
           </div>
         </div>

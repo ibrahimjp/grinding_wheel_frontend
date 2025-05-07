@@ -1,64 +1,12 @@
 import React from 'react';
 import './table.css'
+import Preloader from '../components/Preloader';
+import Header from '../components/Header';
 const AbrasiveCatalog = () => {
   return (
     
 <div>
-  {/* Preloader */}
-  <div id="js-preloader" className="js-preloader">
-    <div className="preloader-inner">
-      <span className="dot"></span>
-      <div className="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-
-  {/* Sub Header */}
-  <div className="sub-header">
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-8 col-md-8">
-          <ul className="info">
-            <li><i className="fa fa-envelope"></i> burhaniabron@gmail.com</li>
-            <li><i className="fa fa-map"></i> Trinoxabrasives.com</li>
-          </ul>
-        </div>
-        <div className="col-lg-4 col-md-4">
-          <ul className="social-links">
-            <li><a href="https://www.instagram.com/abron_trinoxabrasives?igsh=NHVyZGJhaGx4ZXF4&utm_source=qr"><i className="fab fa-instagram"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {/* Header */}
-  <header className="header-area header-sticky">
-    <div className="container">
-      <div className="row">
-        <div className="col-12">
-          <nav className="main-nav">
-            <a href="index.html" className="logo">
-              <h1>Trinox</h1>
-            </a>
-            <ul className="nav">
-              <li><a href="/">Home</a></li>
-              <li><a href="/properties">Products</a></li>
-              <li><a href="/property-details" className="active">Catalog</a></li>
-              <li><a href="/contact">Contact Us</a></li>
-            </ul>
-            <a className="menu-trigger">
-              <span>Menu</span>
-            </a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-
+  <Header/>
   {/* Page Heading */}
   <div className="page-heading header-text">
     <div className="container">

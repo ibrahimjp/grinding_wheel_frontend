@@ -43,7 +43,6 @@ const Contact = () => {
   return (
     <div className="contact-page">
       <Header />
-      {/* Hero Section */}
       <div className="contact-hero">
         <div className="container">
           <div className="row">
