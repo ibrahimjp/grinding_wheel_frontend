@@ -21,14 +21,14 @@ function ProductCard({ product }) {
           />
         </a>
         <span className="category">Reinforced cutting</span>
-        <h6>$XXX</h6>
+        {/* <h6>$XXX</h6> */}
         <h4>
           <a href="/property-details">REINFORCED CUT OFF WHEEL</a>
         </h4>
 
         <div className="main-button flex justify-between">
           {/* Buy Button */}
-          <button className="buyButtonUiVerse">Buy</button>
+          {/* <button className="buyButtonUiVerse">Buy</button> */}
 
           {/* Show Specifications Button */}
           <button type="button" className="uiVerseBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">

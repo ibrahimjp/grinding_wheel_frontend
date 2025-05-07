@@ -7,11 +7,11 @@ const OtherItems = ({product}) => {
     <div className="item">
       <img src={product.imgSrc} alt={product.title} />
       <span className="category">{product.category}</span>
-      <h6>{product.price}</h6>
+      {/* <h6>{product.price}</h6> */}
       <h4>{product.title}</h4>
 
       <div className="main-button flex justify-between">
-        <button className="btn w-28 btn-success">Buy</button>
+        {/* <button className="btn w-28 btn-success">Buy</button> */}
         <button
           type="button"
           className="btn btn-warning"

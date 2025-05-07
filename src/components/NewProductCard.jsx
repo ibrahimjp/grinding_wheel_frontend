@@ -19,7 +19,7 @@ const NewProductCard = ({ product }) => {
         
         <div className="property-content">
           <h3 className="product-title">{product.title}</h3>
-          <div className="product-price">{product.price}</div>
+          {/* <div className="product-price">{product.price}</div> */}
           
           {product.features && (
             <ul className="product-features">
@@ -30,7 +30,7 @@ const NewProductCard = ({ product }) => {
           )}
           
           <div className="product-actions">
-            <button className="btn-buy">Buy Now</button>
+            {/* <button className="btn-buy">Buy Now</button> */}
             {(product.specifications || product.table) && (
               <button 
                 className="btn-specs" 
