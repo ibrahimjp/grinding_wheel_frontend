@@ -214,7 +214,7 @@ Pre-loader Style
 --------------------------------------------- 
 */
 
-.js-preloader {
+/* .js-preloader {
   position: fixed;
   top: 0;
   left: 0;
@@ -306,7 +306,7 @@ Pre-loader Style
   margin-left: 16px;
   background: rgba(11,119,65,255);
   border-radius: 50%;
-}
+} */
 
 
 
@@ -743,6 +743,14 @@ Banner Style
   padding: 220px 20% 320px 20%;
   margin-top: 0px;
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .main-banner .item{
+   height: 100px;
+   width: 100vh;
+  }
+}
+
+
 
 .main-banner .item-1 {
   background-image: url(../images/banner-01.jpg);
