@@ -8,6 +8,7 @@ import HomeContact from '../components/HomeContact.jsx';
 import Contact from './Contact';
 import { products,products2,products3 } from '../data/data.js';
 import OtherItems from '../components/OtherItems';
+import SideCol from '../components/SideCol.jsx';
 // CSS imports (relative path goes up one level to access assets)
 import '../assets/css/animate.css';
 import '../assets/css/flex-slider.css';
@@ -20,7 +21,6 @@ import '../assets/js/custom.js';
 import '../assets/js/isotope.min.js';
 import '../assets/js/owl-carousel.js';
 import './style.css';
-
 function Home() {
   // Sample product data - replace with your actual data
 
@@ -62,6 +62,7 @@ function Home() {
       </div>
       <HomeContact/>
       <Footer />
+      <SideCol />
     </div>
   );
 }
