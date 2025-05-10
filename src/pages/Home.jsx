@@ -4,6 +4,7 @@ import Banner from '../components/Banner';
 import FeaturedSection from '../components/FeaturedSection';
 import ProductCard from '../components/ProductCard';
 import Footer from '../components/Footer';
+import HomeContact from '../components/HomeContact.jsx';
 import Contact from './Contact';
 import { products,products2,products3 } from '../data/data.js';
 import OtherItems from '../components/OtherItems';
@@ -59,6 +60,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <HomeContact/>
       <Footer />
     </div>
   );

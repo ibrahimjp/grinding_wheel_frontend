@@ -40,6 +40,7 @@ const AbrasiveCatalog = () => {
             <div className="col-md-4 mb-4">
               <div className="product-card">
                 <h5>RED & GREEN CUT OFF WHEEL</h5>
+                <img src='/images/grinding_wheel (1).png' alt='Wheel' className='catalog-image'/>
                 <div className="table-responsive">
                   <table className=" table-bordered">
                     <thead>
@@ -70,6 +71,7 @@ const AbrasiveCatalog = () => {
             <div className="col-md-4 mb-4">
               <div className="product-card">
                 <h5>GREEN DOUBLE NET CUT OFF WHEEL</h5>
+                <img src='/images/grinding_wheel (2).png' alt='Wheel' className='catalog-image'/>
                 <div className="table-responsive">
                   <table className="table-bordered">
                     <thead>
@@ -100,6 +102,7 @@ const AbrasiveCatalog = () => {
             <div className="col-md-4 mb-4">
               <div className="product-card">
                 <h5>BLACK DOUBLE NET CUT OFF WHEEL</h5>
+                <img src='/images/grinding_wheel (3).png' alt='Wheel' className='catalog-image'/>
                 <div className="table-responsive">
                   <table className=" table-bordered">
                     <thead>
@@ -138,6 +141,7 @@ const AbrasiveCatalog = () => {
             <div className="col-md-6 mb-4">
               <div className="product-card">
                 <h5>GRINDING DISC</h5>
+                <img src='/images/grinding_wheel (7).png' alt='Wheel' className='catalog-image'/>
                 <div className="table-responsive">
                   <table className=" table-bordered">
                     <thead>
@@ -166,6 +170,7 @@ const AbrasiveCatalog = () => {
             <div className="col-md-6 mb-4">
               <div className="product-card">
                 <h5>FLEXIBLE WA GRINDING WHEEL</h5>
+                <img src='/images/grinding_wheel (8).png' alt='Wheel' className='catalog-image'/>
                 <div className="table-responsive">
                   <table className=" table-bordered">
                     <thead>
@@ -204,6 +209,7 @@ const AbrasiveCatalog = () => {
             <div className="col-md-4 mb-4">
               <div className="product-card">
                 <h5>FLAP DISC</h5>
+                <img src='/images/flip_disc (1).png' alt='Wheel' className='catalog-image'/>
                 <div className="table-responsive">
                   <table className=" table-bordered">
                     <thead>
@@ -234,6 +240,7 @@ const AbrasiveCatalog = () => {
             <div className="col-md-4 mb-4">
               <div className="product-card">
                 <h5>RED FLAP DISC</h5>
+                <img src='/images/flip_disc (3).png' alt='Wheel' className='catalog-image'/>
                 <div className="table-responsive">
                   <table className=" table-bordered">
                     <thead>
@@ -262,6 +269,7 @@ const AbrasiveCatalog = () => {
             <div className="col-md-4 mb-4">
               <div className="product-card">
                 <h5>GREEN FLAP DISC</h5>
+                <img src='/images/flip_disc (2).png' alt='Wheel' className='catalog-image'/>
                 <div className="table-responsive">
                   <table className=" table-bordered">
                     <thead>
@@ -299,6 +307,7 @@ const AbrasiveCatalog = () => {
             <div className="col-md-6 mb-4">
               <div className="product-card">
                 <h5>DIAMOND CORE BITS</h5>
+                <img src='/images/other6.png' alt='Wheel' className='catalog-image'/>
                 <div className="table-responsive">
                   <table className=" table-bordered">
                     <thead>
@@ -346,6 +355,7 @@ const AbrasiveCatalog = () => {
             <div className="col-md-6 mb-4">
               <div className="product-card">
                 <h5>DIAMOND CUP WHEELS</h5>
+                <img src='/images/other7.png' alt='Wheel' className='catalog-image'/>
                 <div className="table-responsive">
                   <table className=" table-bordered">
                     <thead>

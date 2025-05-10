@@ -47,7 +47,7 @@ function Banner() {
               <span className="category">
                 {slide.category.split(', ')[0]}, <em>{slide.category.split(', ')[1]}</em>
               </span>
-              <h2 dangerouslySetInnerHTML={{ __html: slide.title.replace('<br>', '<br/>') }} />
+              <h2 className='text-red-100' dangerouslySetInnerHTML={{ __html: slide.title.replace('<br>', '<br/>') }} />
             </div>
           </div>
         ))}

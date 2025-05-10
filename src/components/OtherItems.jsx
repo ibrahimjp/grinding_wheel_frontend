@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import './uiVerseBtn.css';
 const OtherItems = ({product}) => {
     const [showDialog, setShowDialog] = useState(false);
   return (
@@ -14,11 +15,11 @@ const OtherItems = ({product}) => {
         {/* <button className="btn w-28 btn-success">Buy</button> */}
         <button
           type="button"
-          className="btn btn-warning"
+          className="uiVerseBtn"
           data-bs-toggle="modal"
           data-bs-target={`#modal-${product.id}`}
         >
-          Show Details
+          <p>Show Details</p>
         </button>
       </div>
 

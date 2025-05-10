@@ -32,7 +32,7 @@ function ProductCard({ product }) {
 
           {/* Show Specifications Button */}
           <button type="button" className="uiVerseBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            <p>Show cart</p>
+            <p>Show chart</p>
           </button>
 
 
