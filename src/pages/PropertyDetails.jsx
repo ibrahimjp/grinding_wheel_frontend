@@ -353,9 +353,9 @@ const AbrasiveCatalog = () => {
             </div>
 
             <div className="col-md-6 mb-4">
-              <div className="product-card">
+              <div className="Catalog-product-card">
                 <h5>DIAMOND CUP WHEELS</h5>
-                <img src='/images/other7.png' alt='Wheel' className='catalog-image'/>
+                <img src='/images/other7.png' alt='Wheel' className='catalog-image' />
                 <div className="table-responsive">
                   <table className=" table-bordered">
                     <thead>
