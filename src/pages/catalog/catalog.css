@@ -147,3 +147,31 @@ th {
     }
 }
 
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+  
+  th {
+    background-color: #3a2b1d;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  td {
+    background-color: #b5a693;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  tr:nth-child(even) td {
+    background-color: #c7b7a1;
+  }
+  
+  tr:hover td {
+    background-color: #d0c0ad;
+  }
+  

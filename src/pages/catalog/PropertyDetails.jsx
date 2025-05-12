@@ -1,5 +1,4 @@
 import React from 'react';
-import './table.css'
 import './catalog.css'
 import Preloader from '../../components/Preloader';
 import Header from '../../components/Header';
