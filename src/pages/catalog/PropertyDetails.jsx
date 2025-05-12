@@ -28,10 +28,10 @@ const AbrasiveCatalog = () => {
               <table>
                 <thead>
                   <tr>
-                    <th>Size</th>
-                    <th>Diameter (in MM)</th>
-                    <th>Thickness (in MM)</th>
-                    <th>Arbor Hole (in MM)</th>
+                    <th><small>Size</small></th>
+                    <th><small>Diameter</small></th>
+                    <th><small>Thickness</small></th>
+                    <th><small>Arbor Hole &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</small></th>
                   </tr>
                 </thead>
                 <tbody>

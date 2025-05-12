@@ -112,7 +112,12 @@ th {
     color: #333;
     font-size: 0.95em; 
 }
-
+@media screen and (min-width: 200px) and (max-width: 500px) {
+    .table-container1{
+        overflow-x: hidden;
+    }
+    
+}
 @media (min-width: 768px) {
     .content1 {
         flex-direction: row; 
