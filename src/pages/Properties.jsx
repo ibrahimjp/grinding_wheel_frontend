@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { products4 } from '../data/data';
 import NewProductCard from '../components/NewProductCard';
-
+import SideCol from '../components/SideCol';
 function Properties() {
   const [activeFilter, setActiveFilter] = useState('*');
   const [isFiltering, setIsFiltering] = useState(false);
@@ -100,6 +100,7 @@ function Properties() {
         </div>
       </div>
       <Footer />
+      <SideCol/>
     </div>
   );
 }
