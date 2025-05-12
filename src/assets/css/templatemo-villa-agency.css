@@ -436,6 +436,7 @@ Header Style
 
 .header-area .main-nav .nav li:last-child {
   padding-right: 0px;
+  
 }
 
 .header-area .main-nav .nav li {
@@ -470,7 +471,7 @@ Header Style
   font-weight: 400;
   text-transform: none;
   border-radius: 20px;
-  padding-left: 10px;
+  padding-left: 15px;
 }
 
 .header-area .main-nav .nav li:last-child a i {
@@ -2420,15 +2421,21 @@ body {
 }
 .left_social {
   position: fixed;
-  right: -155px;
-  top: 30%;
+  right: -145px;
+  top: 35%;
   z-index: 999;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.left_social img{
+  display: inline;
+  width: 32px;
+  height: 32px;
 }
 @media screen and (min-width: 150px) and (max-width: 450px) {
   .left_social {
-   right: -150px;
+   right: -145px;
   }
 }
 .left_social a{
