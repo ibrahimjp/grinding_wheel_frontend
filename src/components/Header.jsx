@@ -65,7 +65,7 @@ const Header = () => {
                 {isMobile && (
                   <nav>
                    <a href="/">
-                  <h1 className='mt-6'>Burhani&nbsp;Traders</h1>
+                  <h1 className='mt-6 text-black font-bold'>Burhani&nbsp;Traders</h1>
                 </a>
                   <div class="hamburger-menu ">
                     <input id="menu__toggle" type="checkbox" />
