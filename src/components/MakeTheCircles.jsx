@@ -4,7 +4,7 @@ const MakeTheCircles = () => {
   return (
     <div className='page'>
         <div className="header">
-            Abrasive
+            <h1>Trinox</h1>
         </div>
         <div class="wheels-container">
   <div class="wheel left">
