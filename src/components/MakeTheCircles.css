@@ -1,226 +1,216 @@
+/* Global reset/base (optional but good practice) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-.page{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif; /* Example font */
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centers content if page is taller than content */
+  padding: 20px;
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
+  background-color: #f0f0f0; /* Optional: light background for the page */
+}
+
+.header {
+  width: auto;
+  padding: clamp(15px, 3vw, 20px) clamp(20px, 4vw, 30px);
+  background: #F2C91A;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: clamp(20px, 5vh, 40px); /* Responsive margin */
+  /* If you want the header absolutely positioned at the top: */
+  /* position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100; */
+}
+
+.header h1 {
+  font-size: clamp(28px, 5vw, 40px); /* min, preferred, max */
+  font-weight: 800;
+  color: #333;
+}
+
+.wheels-container {
+  width: 100%;
+  max-width: 700px; /* Adjust to control max spread of wheels */
+  height: clamp(300px, 50vh, 450px); /* Responsive height: min, preferred, max */
+  display: flex; /* Can be useful for alignment if non-absolute children are ever added */
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Crucial for absolute positioning of children */
+  margin-bottom: clamp(20px, 5vh, 40px);
+  /* outline: 1px dashed blue; */ /* For debugging layout */
+}
+
+.wheel {
+  position: absolute;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s ease-out; /* Smoother, slightly more dynamic transition */
+  /* Base size of the wheel element - image will fill this */
+  /* Widths are defined per specific wheel class using clamp for responsiveness */
+}
+
+.wheel img {
+  display: block;
+  width: 100%; /* Image takes full width of its .wheel parent */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensures whole image is visible & maintains aspect ratio */
+  filter: drop-shadow(3px 5px 5px rgba(0,0,0,0.15)); /* Softer, more modern shadow */
+}
+
+/* Wheel specific sizes and positions */
+/* Sizes use clamp(MIN_SIZE, VIEWPORT_SCALED_SIZE, MAX_SIZE) */
+/* Positions are percentages of .wheels-container */
+
+.wheel.left {
+  width: clamp(70px, 18vw, 130px);
+  left: 22%; /* Adjusted for new scaling */
+  top: 30%;
+  transform: translate(-50%, -50%) scale(0.95);
+  z-index: 1;
+}
+
+.wheel.center-back {
+  width: clamp(90px, 22vw, 160px);
+  left: 50%;
+  top: 28%;
+  transform: translate(-50%, -50%) scale(1.1);
+  z-index: 2;
+}
+
+.wheel.right {
+  width: clamp(70px, 18vw, 130px);
+  left: 78%; /* Adjusted for new scaling */
+  top: 30%;
+  transform: translate(-50%, -50%) scale(0.95);
+  z-index: 1;
+}
+
+.wheel.center-front.left {
+  width: clamp(75px, 19vw, 140px);
+  left: 35%; /* Adjusted for new scaling */
+  top: 68%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.wheel.center-front.right {
+  width: clamp(75px, 19vw, 140px);
+  left: 65%; /* Adjusted for new scaling */
+  top: 68%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.title-abrasive {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.title-abrasive h2 {
+  font-size: clamp(22px, 4.5vw, 30px);
+  margin: 5px 0;
+  color: #333; /* Darker text for better readability */
+  font-weight: 700;
+  text-transform: uppercase; /* Common styling for such titles */
+}
+
+.title-abrasive .line {
+  width: clamp(60px, 10vw, 80px); /* Responsive width */
+  height: 4px;
+  background-color: #F2C91A;
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+/* --- Media Queries for fine-tuning --- */
+
+/* Medium devices (tablets, landscape phones) */
+@media (max-width: 768px) {
   .wheels-container {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  
-  .wheel {
-    position: absolute;
-    transition: transform 0.3s ease;
-  }
-  
-  .wheel img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  /* Left wheel */
-  .wheel.left {
-    left: 28%;
-    top: 20%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
-  
-  /* Center back wheel */
-  .wheel.center-back {
-    left: 53%;
-    top: 30%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 200px;
-    height: 200px;
-  }
-  
-  .wheel.center-back img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  /* Right wheel */
-  .wheel.right {
-    width: 250px;
-    height: 250px;
-    left: 76%;
-    top: 30%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
-  
-  /* Front left wheel */
-  .wheel.center-front.left {
-    left: 65%;
-    top: 47%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
-  
-  /* Front right wheel */
-  .wheel.center-front.right {
-    left: 48%;
-    top: 60%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
-  
-  @media (max-width: 768px) {
-    .wheel img {
-      width: 130px;
-      height: 130px;
-    }
-  .wheels-container{
-    margin-top: 150px;
-  }
-    .wheel.center-back img {
-      width: 150px;
-      height: 150px;
-    }
-      /* Left wheel */
-  .wheel.left {
-    left: 20%;
-    top: 20%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
-  
-  /* Center back wheel */
-  .wheel.center-back {
-    left: 53%;
-    top: 30%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
-  
-  .wheel.center-back img {
-    object-fit: cover;
-  }
-  
-  /* Right wheel */
-  .wheel.right {
-    left: 85%;
-    top: 34%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
-  
-  /* Front left wheel */
-  .wheel.center-front.left {
-    left: 65%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
-  
-  /* Front right wheel */
-  .wheel.center-front.right {
-    left: 48%;
-    top: 60%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
+    height: clamp(280px, 45vh, 400px); /* Slightly adjust height range */
+    max-width: 600px;
   }
 
-  @media screen and (min-width: 1000px) {
-      /* Left wheel */
-  .wheel.left {
-    left: 40%;
-    top: 35%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+  .wheel.left { left: 18%; top: 32%; width: clamp(65px, 17vw, 120px); }
+  .wheel.center-back { top: 25%; width: clamp(85px, 21vw, 150px); }
+  .wheel.right { left: 82%; top: 32%; width: clamp(65px, 17vw, 120px); }
+  .wheel.center-front.left { left: 32%; top: 70%; width: clamp(70px, 18vw, 130px); }
+  .wheel.center-front.right { left: 68%; top: 70%; width: clamp(70px, 18vw, 130px); }
+}
+
+/* Small devices (portrait phones) */
+@media (max-width: 480px) {
+  .page {
+    padding: 15px;
   }
-  
-  /* Center back wheel */
+
+  .header {
+    /* Uses clamp, but if you need very specific small screen override: */
+    /* width: 90%;
+    max-width: 280px;
+    padding: 12px 15px; */
+  }
+  .header h1 {
+    /* font-size: clamp(24px, 6vw, 30px); Handled by base clamp */
+  }
+
+  .wheels-container {
+    height: clamp(220px, 40vh, 320px); /* Further adjust height */
+    margin-bottom: clamp(15px, 4vh, 30px);
+    margin-top: 10px; /* Add some space if header is static */
+  }
+
+  /* Adjust wheel sizes and positions more significantly for very small screens */
+  .wheel.left { width: clamp(50px, 15vw, 90px); left: 15%; top: 35%; }
+  .wheel.center-back { width: clamp(65px, 18vw, 110px); top: 28%; transform: translate(-50%, -50%) scale(1.05); }
+  .wheel.right { width: clamp(50px, 15vw, 90px); left: 85%; top: 35%; }
+  .wheel.center-front.left { width: clamp(55px, 16vw, 100px); left: 28%; top: 72%; }
+  .wheel.center-front.right { width: clamp(55px, 16vw, 100px); left: 72%; top: 72%; }
+
+  .title-abrasive h2 {
+    font-size: clamp(18px, 5vw, 24px);
+  }
+  .title-abrasive .line {
+    width: clamp(50px, 8vw, 70px);
+    height: 3px;
+    margin: 10px auto;
+  }
+}
+
+/* For very large screens, if you want to further expand the layout */
+@media screen and (min-width: 1200px) {
+  .wheels-container {
+    max-width: 800px; /* Allow a bit more spread */
+    height: clamp(400px, 50vh, 500px);
+  }
+  /* Optionally, slightly increase base size in clamp for very large screens if needed */
   .wheel.center-back {
-    left: 50%;
-    top: 30%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 200px;
-    height: 200px;
+     width: clamp(100px, 20vw, 180px); /* Example: allow it to get a bit bigger */
   }
-  
-  .wheel.center-back img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  /* Right wheel */
-  .wheel.right {
-    width: 250px;
-    height: 250px;
-    left: 59%;
-    top: 40%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
-  
-  /* Front left wheel */
-  .wheel.center-front.left {
-    left: 56%;
-    top: 65%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
-  
-  /* Front right wheel */
-  .wheel.center-front.right {
-    left: 45%;
-    top: 72%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
-  }
+}
 
-  .header{
-    position: absolute;
-    top: 15%;
-    left: 7%;
-    /* width: 100%; */
-    padding: 40px 40px;
-    display: flex;
-    align-items: center;
-    transition: 0.5s ease;
-    background: #F2C91A;
-    
-  }
-  .header h1{
-    margin-top: 15px;
-    font-size: 40px;
-    font-weight: 800;
-  }
 
-  @media screen and (min-width: 200px) and (max-width: 600px) {
-    .header{
-      display: flex;
-      align-items: center;
-      transition: 0.5s ease;
-      background: #F2C91A;
-      width: 150px;
-      height: 90px;
-      padding-top: 25px;
-      padding-left: 30px;  
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-    }
-    .header h1{
-      font-size: 30px;
-      font-weight: 700;
-    }
-    
-  }
+.abrasive{
+  color: red;
+  font-size: 30px;
+  font-weight: 800;
+}
+.catalog{
+
+}
