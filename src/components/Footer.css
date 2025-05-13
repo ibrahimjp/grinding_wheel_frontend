@@ -1,0 +1,94 @@
+
+/* 
+---------------------------------------------
+Footer Style
+--------------------------------------------- 
+*/
+
+
+footer {
+    background: linear-gradient(135deg, #1e1e1e, #111111);
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+    line-height: 3;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  footer .footer-content p {
+    flex: 1;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  footer .footer-content .footer-links a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  footer .footer-content .footer-links a:hover {
+    color: #00bcd4;
+  }
+  
+  footer .footer-content .footer-links a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #00bcd4;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  footer .footer-content .footer-links a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  footer .animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #024d57, transparent);
+    animation: pulse 6s infinite;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.3;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.1;
+    }
+  }

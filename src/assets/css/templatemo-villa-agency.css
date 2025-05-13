@@ -1261,43 +1261,6 @@ Contact Style
   background-color: rgba(11,119,65,255);
 }
 
-
-/* 
----------------------------------------------
-Footer Style
---------------------------------------------- 
-*/
-
-footer.footer-no-gap {
-  margin-top: 0px;
-}
-
-footer {
-  margin-top: 150px;
-  background-color: #1e1e1e;
-  min-height: 100px;
-}
-
-footer p {
-  text-align: center;
-  line-height: 100px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-footer p a {
-  color: #fff;
-  transition: all .3s;
-  position: relative;
-  z-index: 3;
-}
-
-footer p a:hover {
-  opacity: 0.75;
-}
-
-
 /* 
 ---------------------------------------------
 Page Header Style
@@ -2393,10 +2356,6 @@ body {
   }
 }
 
-.footer-content a{
-  text-decoration: none;
-  color: blue;
-}
 @media screen and (min-width: 200px) and (max-width: 510px) {
   .footer-content  p {
     font-size: 9px;
@@ -2451,10 +2410,9 @@ body {
 .left_social a span{
   font-size: 21px;
   margin-left: 10px;
-  color: #008000;
+  color: #00aa00;
 }
 .left_social a:hover{
   transform: translateX(-135px);
   transition: 0.3s;
 }
-

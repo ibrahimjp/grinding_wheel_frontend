@@ -2,7 +2,9 @@ import React from 'react'
 
 const AbrasiveWheelsDisplay = () => {
   return (
-    <div></div>
+    <div>
+      
+    </div>
   )
 }
 
