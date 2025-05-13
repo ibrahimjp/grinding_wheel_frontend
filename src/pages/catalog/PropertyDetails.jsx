@@ -4,10 +4,12 @@ import Preloader from '../../components/Preloader';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import SideCol from '../../components/SideCol';
+import MakeTheCircles from '../../components/MakeTheCircles';
 const AbrasiveCatalog = () => {
   return (
     <div>
       <Header />
+      <MakeTheCircles/>
       <div class="container1">
         <div class="header1">
           <div class="logo1">
