@@ -159,30 +159,29 @@ body, html {
   .page {
     padding: 15px;
   }
-
   .header {
     /* Uses clamp, but if you need very specific small screen override: */
-    /* width: 90%;
+    width: 90%;
     max-width: 280px;
-    padding: 12px 15px; */
+    padding: 12px 15px;
   }
   .header h1 {
-    /* font-size: clamp(24px, 6vw, 30px); Handled by base clamp */
+    font-size: clamp(24px, 6vw, 30px);
   }
-
+  
   .wheels-container {
     height: clamp(220px, 40vh, 320px); /* Further adjust height */
     margin-bottom: clamp(15px, 4vh, 30px);
     margin-top: 10px; /* Add some space if header is static */
   }
-
+  
   /* Adjust wheel sizes and positions more significantly for very small screens */
   .wheel.left { width: clamp(50px, 15vw, 90px); left: 15%; top: 35%; }
   .wheel.center-back { width: clamp(65px, 18vw, 110px); top: 28%; transform: translate(-50%, -50%) scale(1.05); }
   .wheel.right { width: clamp(50px, 15vw, 90px); left: 85%; top: 35%; }
   .wheel.center-front.left { width: clamp(55px, 16vw, 100px); left: 28%; top: 72%; }
   .wheel.center-front.right { width: clamp(55px, 16vw, 100px); left: 72%; top: 72%; }
-
+  
   .title-abrasive h2 {
     font-size: clamp(18px, 5vw, 24px);
   }
@@ -191,6 +190,7 @@ body, html {
     height: 3px;
     margin: 10px auto;
   }
+  
 }
 
 /* For very large screens, if you want to further expand the layout */

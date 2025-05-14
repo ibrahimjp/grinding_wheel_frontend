@@ -215,7 +215,7 @@ Pre-loader Style
 --------------------------------------------- 
 */
 
-.js-preloader {
+.js-loading {
   position: fixed;
   top: 0;
   left: 0;
@@ -235,7 +235,7 @@ Pre-loader Style
   transition: opacity 0.25s ease;
 }
 
-.js-preloader.loaded {
+.js-loading.loaded {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -269,14 +269,14 @@ Pre-loader Style
   }
 }
 
-.preloader-inner {
+.loading-inner {
   position: relative;
   width: 142px;
   height: 40px;
   background: transparent;
 }
 
-.preloader-inner .dot {
+.loading-inner .dot {
   position: absolute;
   width: 16px;
   height: 16px;
@@ -290,7 +290,7 @@ Pre-loader Style
   animation: dot 2.8s infinite;
 }
 
-.preloader-inner .dots {
+.loading-inner .dots {
   -webkit-transform: translateX(0);
   transform: translateX(0);
   margin-top: 12px;
@@ -299,7 +299,7 @@ Pre-loader Style
   animation: dots 2.8s infinite;
 }
 
-.preloader-inner .dots span {
+.loading-inner .dots span {
   display: block;
   float: left;
   width: 16px;

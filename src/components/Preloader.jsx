@@ -2,8 +2,9 @@ import React from 'react'
 import './preloader.css'
 const Preloader = () => {
   return (
-    <div div id="js-preloader" class="js-preloader" >
-      <div class="preloader-inner">
+    <div id="js-loading" class="js-loading" >
+      <div class="loading-inner">
+      {/* preloader */}
         <div class="dots">
           <div>
             <div class="🤚">

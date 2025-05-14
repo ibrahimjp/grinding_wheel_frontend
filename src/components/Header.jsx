@@ -7,8 +7,6 @@ import './HamburgerIcon.css'
 // Nav
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectMenu, setSelectMenu] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [loading, setLoading] = useState(true);
   // Check if the screen is mobile size
