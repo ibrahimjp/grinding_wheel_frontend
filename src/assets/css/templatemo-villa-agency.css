@@ -214,7 +214,7 @@ Pre-loader Style
 --------------------------------------------- 
 */
 
-/* .js-preloader {
+.js-preloader {
   position: fixed;
   top: 0;
   left: 0;
@@ -306,7 +306,7 @@ Pre-loader Style
   margin-left: 16px;
   background: rgba(11,119,65,255);
   border-radius: 50%;
-} */
+}
 
 
 
@@ -2378,6 +2378,8 @@ body {
       width: 350px;
   }
 }
+
+
 .left_social {
   position: fixed;
   right: -145px;
@@ -2394,7 +2396,7 @@ body {
 }
 @media screen and (min-width: 150px) and (max-width: 450px) {
   .left_social {
-   right: -145px;
+   right: -140px;
   }
 }
 .left_social a{

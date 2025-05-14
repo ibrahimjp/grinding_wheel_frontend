@@ -22,8 +22,6 @@ import '../assets/js/isotope.min.js';
 import '../assets/js/owl-carousel.js';
 import './style.css';
 function Home() {
-  // Sample product data - replace with your actual data
-
 
   return (
     <div className="home-page">

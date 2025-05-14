@@ -3,29 +3,55 @@ import { Link } from 'react-router-dom';
 import './preloader.css'
 import Preloader from '../components/Preloader';
 import './HamburgerIcon.css'
+
+
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectMenu, setSelectMenu] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-
+  const [loading, setLoading] = useState(true);
   // Check if the screen is mobile size
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 991);
     };
-
+    
     // Set initial value
     handleResize();
-
+    
     // Add event listener
     window.addEventListener('resize', handleResize);
-
+    
     // Clean up
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
   }, []);
+  
+  useEffect(() => {
+    const handleLoad = () => {
+      setLoading(false);
+    };
+  
+    if (document.readyState === 'complete') {
+      setLoading(false);
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
+  
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
+
+
   return (
     <div>
-      <Preloader />
+      {loading ? (
+        <Preloader />
+      ) : (
+        <>
       <div className="sub-header">
         <div className="container">
           <div className="row">
@@ -87,6 +113,8 @@ const Header = () => {
           </div>
         </div>
       </header>
+    </>
+      )}
     </div>
   );
 }
