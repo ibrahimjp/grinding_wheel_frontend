@@ -2383,7 +2383,7 @@ body {
 
 .left_social {
   position: fixed;
-  right: -145px;
+  right: -140px;
   top: 35%;
   z-index: 999;
   display: flex;
