@@ -5,7 +5,6 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import SideCol from '../../components/SideCol';
 import MakeTheCircles from '../../components/MakeTheCircles';
-import AbrasiveWheelsDisplay from '../../components/AbrasiveWheelsDisplay';
 const AbrasiveCatalog = () => {
   return (
     <div>
@@ -77,7 +76,6 @@ const AbrasiveCatalog = () => {
           </div>
         </div>
       </div>
-      <AbrasiveWheelsDisplay />
       <Footer />
       <SideCol />
     </div>
