@@ -211,6 +211,65 @@ body, html {
   font-size: 30px;
   font-weight: 800;
 }
-.catalog{
 
+
+/* Small devices (portrait phones) */
+@media (max-width: 480px) {
+  .page {
+    padding: 15px;
+  }
+
+  .header {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: clamp(26px, 7vw, 34px);
+  }
+
+  .wheels-container {
+    height: clamp(250px, 50vh, 350px);
+    margin-bottom: clamp(20px, 5vh, 35px);
+  }
+
+  .wheel.left {
+    width: clamp(65px, 20vw, 110px); 
+    left: 15%;
+    top: 35%;
+  }
+
+  .wheel.center-back {
+    width: clamp(80px, 24vw, 130px); 
+    top: 30%;
+    transform: translate(-50%, -50%) scale(1.1); 
+  }
+
+  .wheel.right {
+    width: clamp(65px, 20vw, 110px); 
+    left: 85%;
+    top: 35%;
+  }
+
+  .wheel.center-front.left {
+    width: clamp(70px, 22vw, 115px); 
+    left: 28%;
+    top: 70%;
+  }
+
+  .wheel.center-front.right {
+    width: clamp(70px, 22vw, 115px); 
+    left: 72%;
+    top: 70%;
+  }
+
+  .title-abrasive h2 {
+    font-size: clamp(20px, 5vw, 26px);
+  }
+
+  .title-abrasive .line {
+    width: clamp(60px, 10vw, 80px);
+    height: 4px;
+    margin: 12px auto;
+  }
 }
