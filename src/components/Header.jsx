@@ -98,10 +98,10 @@ const Header = () => {
                         </label>
 
                         <ul class="menu__box">
-                          <li><NavLink class="menu__item" to="/">Home</NavLink></li>
-                          <li><NavLink class="menu__item" to="/properties">Products</NavLink></li>
-                          <li><NavLink class="menu__item" to="/property-details">Catalog</NavLink></li>
-                          <li><NavLink class="menu__item" to="/contact">Contact Us</NavLink></li>
+                          <li><a class="menu__item" href="/">Home</a></li>
+                          <li><a class="menu__item" href="/properties">Products</a></li>
+                          <li><a class="menu__item" href="/property-details">Catalog</a></li>
+                          <li><a class="menu__item" href="/contact">Contact Us</a></li>
                         </ul>
                       </div>
                     </nav>
