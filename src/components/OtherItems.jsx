@@ -54,7 +54,7 @@ const OtherItems = ({product}) => {
               )}
               {product.table && (
                 <>
-                  <table className="table table-bordered text-center">
+                  <table style={{ borderCollapse: "collapse", fontFamily: "Arial, sans-serif", textAlign: "center" }}>
                     <thead className="table-dark">
                       <tr>
                         <th>Size</th>

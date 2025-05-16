@@ -7,10 +7,11 @@ function ProductCard({ product }) {
   return (
     <div className="col-lg-4 col-md-6">
       <div className="item">
-        <a href="/property-details">
+        <a href="/property-details" className='image-container'>
           <img
             src={product.imgSrc}
             alt="Reinforced Cut Off Wheel"
+            className="product-image"
           />
         </a>
         <span className="category">Reinforced cutting</span>
