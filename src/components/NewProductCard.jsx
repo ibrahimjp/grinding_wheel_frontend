@@ -42,7 +42,7 @@ const NewProductCard = ({ product }) => {
           </div>
           
           {showSpecs && (product.specifications || product.table) && (
-            <div className="product-specs">
+            <div className="product-specs table-responsive">
               <table className="specs-table">
                 <thead>
                   <tr>

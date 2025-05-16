@@ -26,7 +26,7 @@ const AbrasiveCatalog = () => {
           </div>
 
           <div class="info-section1">
-            <div class="table-container1">
+            <div class="table-container1 table-responsive">
               <table>
                 <thead>
                   <tr>

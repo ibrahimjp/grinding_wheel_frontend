@@ -1822,11 +1822,9 @@ body {
 .specs-table th, .specs-table td {
   padding: 8px 12px;
   text-align: left;
-  border-bottom: 1px solid #eee;
 }
 
 .specs-table th {
-  background-color: #f8f9fa;
   font-weight: 600;
 }
 
