@@ -1610,6 +1610,9 @@ body {
   .properties .item .main-button {
     text-align: center;
   }
+  .properties .item img {
+background: #000;
+  }
   .properties .item ul li {
     margin-right: 10px;
     font-size: 13px;

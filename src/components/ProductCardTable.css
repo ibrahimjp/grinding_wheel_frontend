@@ -5,63 +5,111 @@ Properties Style
 */
 
 .properties .item {
-    background-color: #fafafa;
-    border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 30px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.properties .item img {
+  border-radius: 10px;
+}
+
+.properties .item span.category {
+  background-color: #fbd9cf;
+  font-weight: 500;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #1e1e1e;
+  padding: 5px 12px;
+  display: inline-block;
+  margin-top: 25px;
+}
+
+.properties .item h4 {
+  font-size: 19px;
+  margin: 25px 0px;
+}
+
+.properties .item h4 a {
+  color: #1e1e1e;
+}
+
+.properties .item ul li {
+  display: inline-block;
+  font-size: 15px;
+  color: #4a4a4a;
+  margin-right: 20px;
+}
+
+.properties .item ul li span {
+  font-weight: 600;
+  color: #1e1e1e;
+}
+
+.properties .item ul {
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+
+.properties .item h6 {
+  font-size: 20px;
+  color: rgba(11,119,65,255);
+  margin-top: 6px;
+  display: inline-block;
+  float: right;
+  margin-top: 30px;
+}
+
+.properties .item .main-button {
+  text-align: center;
+}
+
+/* Add this CSS to one of your CSS files, e.g., uiVerseBtn.css */
+
+/* Ensure the table doesn't overflow */
+.modal-body .product-spec-table {
+  /* This should already be handled by Bootstrap's modal-body,
+     but explicitly setting max-width can be a fallback */
+  max-width: 100%;
+  /* Allow column content to wrap if necessary, but this can make columns uneven */
+  /* table-layout: fixed; */ /* Only use this if you define column widths */
+}
+
+/* Reduce padding and font size for table cells on smaller screens */
+@media (max-width: 576px) { /* Adjust breakpoint as needed, Bootstrap's 'sm' breakpoint */
+  .modal-body .product-spec-table th,
+  .modal-body .product-spec-table td {
+    padding: 6px; /* Reduced padding */
+    font-size: 12px; /* Reduced font size */
+    word-break: break-word; /* Allow long words to break */
   }
-  
-  .properties .item img {
-    border-radius: 10px;
+
+  /* Adjust header line breaks if needed */
+  .modal-body .product-spec-table th br {
+      /* Maybe no change needed here, <br> already creates lines */
   }
-  
-  .properties .item span.category {
-    background-color: #fbd9cf;
-    font-weight: 500;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #1e1e1e;
-    padding: 5px 12px;
-    display: inline-block;
-    margin-top: 25px;
-  }
-  
-  .properties .item h4 {
-    font-size: 19px;
-    margin: 25px 0px;
-  }
-  
-  .properties .item h4 a {
-    color: #1e1e1e;
-  }
-  
-  .properties .item ul li {
-    display: inline-block;
-    font-size: 15px;
-    color: #4a4a4a;
-    margin-right: 20px;
-  }
-  
-  .properties .item ul li span {
-    font-weight: 600;
-    color: #1e1e1e;
-  }
-  
-  .properties .item ul {
-    border-bottom: 1px solid #eaeaea;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-  }
-  
-  .properties .item h6 {
-    font-size: 20px;
-    color: rgba(11,119,65,255);
-    margin-top: 6px;
-    display: inline-block;
-    float: right;
-    margin-top: 30px;
-  }
-  
-  .properties .item .main-button {
-    text-align: center;
-  }
+
+   /* Further reduce padding for very small screens if necessary */
+   @media (max-width: 380px) { /* Example: extra small screen adjustment */
+       .modal-body .product-spec-table th,
+       .modal-body .product-spec-table td {
+           padding: 4px;
+           font-size: 11px;
+       }
+   }
+}
+
+/* Optional: Style for alternating row colors */
+.modal-body .product-spec-table tbody tr:nth-child(odd) {
+    background-color: #c6b7a5; /* Your original color */
+}
+
+.modal-body .product-spec-table tbody tr:nth-child(even) {
+    background-color: #d9c7b4; /* A slightly different shade */
+}
+
+.modal-body .product-spec-table tbody tr {
+     background-color: #c6b7a5; /* If you prefer all rows the same */
+}
