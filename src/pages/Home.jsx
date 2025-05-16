@@ -35,8 +35,10 @@ function Home() {
           <div className="section-heading text-center">
             <h6>| Properties</h6>
             <h2>We Provide The Best Grinding Wheels You Like</h2>
-              </div>
             </div>
+            </div>
+
+            
             <h2>CUT OFF WHEELS</h2>
             <div className='row'>
             {products.map(product => (

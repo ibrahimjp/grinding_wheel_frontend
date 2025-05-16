@@ -11,6 +11,7 @@ export const products = [
       { size: '14"', diameter: 355, thickness: 2.8, arbor: 25.4 },
     ],
     class: 'adv',
+    category: 'grinding Wheels',
   },
   {
     id: 2, // Add unique ID
@@ -24,6 +25,7 @@ export const products = [
       { size: '14"', diameter: 355, thickness: 2.5, arbor: 25.4 },
     ],
     class: 'adv',
+    category: 'grinding Wheels',
   },
   {
     id: 3, // Add unique ID
@@ -37,6 +39,7 @@ export const products = [
       { size: '14"', diameter: 355, thickness: 3.0, arbor: 25.4 },
     ],
     class: 'adv',
+    category: 'grinding Wheels',
   },
   {
     id: 4, // Add unique ID
@@ -50,6 +53,7 @@ export const products = [
       { size: '14"', diameter: 355, thickness: 3.5, arbor: 25.4 },
     ],
     class: 'adv',
+    category: 'grinding Wheels',
   },
   {
     id: 5, // Add unique ID
@@ -63,6 +67,7 @@ export const products = [
       { size: '14"', diameter: 355, thickness: 2.7, arbor: 25.4 },
     ],
     class: 'adv',
+    category: 'grinding Wheels',
   },
   {
     id: 6, // Add unique ID
@@ -76,6 +81,7 @@ export const products = [
       { size: '14"', diameter: 355, thickness: 2.9, arbor: 25.4 },
     ],
     class: 'adv',
+    category: 'grinding Wheels',
   },
 ];
 

@@ -6,13 +6,14 @@ const OtherItems = ({product}) => {
   return (
     <div className="col-lg-4 col-md-6">
     <div className="item">
+    <div class="product-card">
+        <div class="product-image">
       <img src={product.imgSrc} alt={product.title} />
-      <span className="category">{product.category}</span>
-      {/* <h6>{product.price}</h6> */}
-      <h4>{product.title}</h4>
 
-      <div className="main-button flex justify-between">
-        {/* <button className="btn w-28 btn-success">Buy</button> */}
+        </div>
+        <div class="product-info">
+      <h4>{product.title}</h4>
+          <p class="product-description"><b>{product.category}</b></p>
         <button
           type="button"
           className="uiVerseBtn"
@@ -21,6 +22,8 @@ const OtherItems = ({product}) => {
         >
           <p>Show Details</p>
         </button>
+
+        </div>
       </div>
 
       <div

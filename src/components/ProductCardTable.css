@@ -4,6 +4,83 @@ Properties Style
 --------------------------------------------- 
 */
 
+/* 
+---------------------------------------------
+Properties Style
+--------------------------------------------- 
+*/
+
+.properties ul.properties-filter {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.properties ul.properties-filter li {
+  display: inline-block;
+  margin: 5px 8px;
+}
+
+.properties ul.properties-filter li a {
+  display: inline-block;
+  text-align: center;
+  font-size: 15px;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: #fff;
+  background-color: #1e1e1e;
+  padding: 12px 25px;
+  border-radius: 5px;
+  transition: all .3s;
+}
+
+.properties ul.properties-filter li a.is_active {
+  background-color: #f35525;
+  color: #fff;
+}
+
+.properties ul.properties-filter li a.is_active:hover {
+  color: #fff;
+}
+
+.properties ul.properties-filter li a:hover {
+  color: #f35525;
+}
+
+.properties ul.pagination {
+  margin-top: 50px;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+}
+
+.properties ul.pagination li {
+  display: inline-block;
+  margin: 0px 5px;
+}
+
+.properties ul.pagination li a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 50%;
+  transition: all .3s;
+}
+
+.properties ul.pagination li a:hover,
+.properties ul.pagination li a.is_active {
+  background-color: #f35525;
+  color: #fff;
+}
+
+
+
 .properties .item {
   background-color: #fafafa;
   border-radius: 10px;
@@ -113,3 +190,129 @@ Properties Style
 .modal-body .product-spec-table tbody tr {
      background-color: #c6b7a5; /* If you prefer all rows the same */
 }
+
+
+
+ .product-card {
+    width: 280px;  /* Default width */
+    height: 400px; /* Default height */
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 180px;  /* Fixed height for consistency */
+    overflow: hidden;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .product-info {
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .product-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333333;
+  }
+  
+  .product-description {
+    font-size: 14px;
+    color: #777777;
+    margin-bottom: 12px;
+  }
+  
+  .product-button {
+    padding: 10px 16px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  
+  .product-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* --- Responsive Styles --- */
+  
+  /* Medium Screens (Tablets) */
+  @media (max-width: 768px) {
+    .product-card {
+      width: 220px;
+      height: 340px;
+      padding: 12px;
+    }
+  
+    .product-image {
+      height: 150px;
+    }
+  
+    .product-title {
+      font-size: 15px;
+    }
+  
+    .product-description {
+      font-size: 13px;
+    }
+  
+    .product-button {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+  }
+  
+  /* Small Screens (Mobile) */
+  @media (max-width: 480px) {
+    .product-card {
+      width: 180px;
+      height: 300px;
+      padding: 10px;
+    }
+  
+    .product-image {
+      height: 120px;
+    }
+  
+    .product-title {
+      font-size: 14px;
+    }
+  
+    .product-description {
+      font-size: 12px;
+    }
+  
+    .product-button {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+  }
+  
