@@ -4,16 +4,16 @@ const NewProductCard = ({ product }) => {
   const [showSpecs, setShowSpecs] = useState(false);
 
   return (
-    <div className={`property-item ${product.class || ''}`}>
+    <div className={`property-item ${product.category_name || ''}`}>
       <div className="property-wrap">
         <div className="property-image">
           <img 
-            src={product.imgSrc} 
+            src={product.image} 
             alt={product.title} 
             className="img-fluid product-image"
           />
           <div className="property-category">
-            {product.category || 'Cutting Wheel'}
+            {product.category_name || 'Cutting Wheel'}
           </div>
         </div>
         

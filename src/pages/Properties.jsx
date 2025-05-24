@@ -1,26 +1,55 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { products4 } from '../data/data';
 import NewProductCard from '../components/NewProductCard';
 import SideCol from '../components/SideCol';
+import axios from 'axios';
+
 function Properties() {
   const [activeFilter, setActiveFilter] = useState('*');
   const [isFiltering, setIsFiltering] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
+
+  // Fetch categories
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get('https://trinoxabrasives.com/api/categories/');
+        setCategories(response.data);
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+      }
+    };
+    fetchCategories();
+  }, []);
+
+  // Fetch products
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('https://trinoxabrasives.com/api/products/');
+        setProducts(response.data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+    fetchProducts();
+  }, []);
 
   const handleFilterClick = (filter) => {
     setIsFiltering(true);
     setActiveFilter(filter);
-    
-    // Reset the filtering state after animation completes
+
     setTimeout(() => {
       setIsFiltering(false);
     }, 500);
   };
 
-  const filteredProducts = products4.filter(
-    product => activeFilter === '*' || product.class === activeFilter
-  );
+  // Filter products based on category name
+const filteredProducts = products.filter((product) => {
+  return activeFilter === '*' || product.category_name === activeFilter;
+});
 
   return (
     <div className="properties-page">
@@ -35,13 +64,14 @@ function Properties() {
           </div>
         </div>
       </div>
+
       <div className="section properties">
         <div className="container">
           <ul className="properties-filter">
             <li>
-              <a 
-                className={activeFilter === '*' ? 'is_active' : ''} 
-                href="#!" 
+              <a
+                className={activeFilter === '*' ? 'is_active' : ''}
+                href="#!"
                 onClick={(e) => {
                   e.preventDefault();
                   handleFilterClick('*');
@@ -50,57 +80,44 @@ function Properties() {
                 Show All
               </a>
             </li>
-            <li>
-              <a 
-                className={activeFilter === 'adv' ? 'is_active' : ''} 
-                href="#!" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleFilterClick('adv');
-                }}
-              >
-                Cutting Wheel
-              </a>
-            </li>
-            <li>
-              <a 
-                className={activeFilter === 'str' ? 'is_active' : ''} 
-                href="#!" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleFilterClick('str');
-                }}
-              >
-                Grinding Wheel
-              </a>
-            </li>
-            <li>
-              <a 
-                className={activeFilter === 'rac' ? 'is_active' : ''} 
-                href="#!" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleFilterClick('rac');
-                }}
-              >
-                Others
-              </a>
-            </li>
-          </ul>
-          <div className={`row properties-box ${isFiltering ? 'filtering' : ''}`}>
-            {filteredProducts.map(product => (    
-              <div 
-                key={product.id} 
-                className={`col-lg-4 col-md-6 align-self-center mb-30 properties-items ${product.class}`}
-              >
-                <NewProductCard product={product} />
-              </div>
+
+            {categories.map((category) => (
+              <li key={category.id}>
+                <a
+                  className={activeFilter === category.name ? 'is_active' : ''}
+                  href="#!"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleFilterClick(category.name);
+                  }}
+                >
+                  {category.name}
+                </a>
+              </li>
             ))}
+          </ul>
+
+          <div className={`row properties-box ${isFiltering ? 'filtering' : ''}`}>
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map((product) => (
+                <div
+                  key={product.id}
+                  className="col-lg-4 col-md-6 align-self-center mb-30 properties-items"
+                >
+                  <NewProductCard product={product} />
+                </div>
+              ))
+            ) : (
+              <div className="col-12">
+                <p>No products available.</p>
+              </div>
+            )}
           </div>
         </div>
       </div>
+
       <Footer />
-      <SideCol/>
+      <SideCol />
     </div>
   );
 }

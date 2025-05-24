@@ -20,13 +20,28 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch('https://trinoxabrasives.com/api/inquiry/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        full_name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      })
+    });
+    console.log(response)
+
+    const result = await response.json();
+
+    if (response.ok && result.status === "success") {
       setSubmitSuccess(true);
       setFormData({
         name: '',
@@ -34,11 +49,19 @@ const Contact = () => {
         subject: '',
         message: ''
       });
-      
-      // Reset success message after 3 seconds
+      // Hide success message after 3 seconds
       setTimeout(() => setSubmitSuccess(false), 3000);
-    }, 1500);
-  };
+    } else {
+      alert('Failed to send message. Please try again.');
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    alert('An error occurred. Please try again.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   return (
     <div className="contact-page">

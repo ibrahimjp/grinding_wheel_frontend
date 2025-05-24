@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './catalog.css'
 import Preloader from '../../components/Preloader';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import SideCol from '../../components/SideCol';
 import MakeTheCircles from '../../components/MakeTheCircles';
-const AbrasiveCatalog = () => {
+import axios from 'axios';
+const AbrasiveCatalog = ({url}) => {
+
+  const fetchData = async () => {
+    console.log(url)
+    try {
+      const response = await axios.get(`${url}/products`);
+      console.log(response.data); 
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  })
   return (
     <div>
       <Header />
