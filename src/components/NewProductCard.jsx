@@ -3,45 +3,49 @@ import React, { useState } from 'react';
 const NewProductCard = ({ product }) => {
   const [showSpecs, setShowSpecs] = useState(false);
 
+  const imageSrc = product.image || product.image_url || product.imgSrc || '/placeholder.jpg';
+
+  // Extract and flatten specs_summary for dynamic rendering
+  const specsEntries = product.specs_summary
+    ? Object.entries(product.specs_summary).flatMap(([_, specs]) => specs)
+    : [];
+
   return (
     <div className={`property-item ${product.category_name || ''}`}>
       <div className="property-wrap">
         <div className="property-image">
-          <img 
-            src={product.image} 
-            alt={product.title} 
+          <img
+            src={imageSrc}
+            alt={product.title}
             className="img-fluid product-image"
+            onError={(e) => {
+              e.target.src = '/placeholder.jpg'; // Fallback on error
+            }}
           />
           <div className="property-category">
-            {product.category_name || 'Cutting Wheel'}
+            {product.category_name || 'Uncategorized'}
           </div>
         </div>
-        
+
         <div className="property-content">
           <h3 className="product-title">{product.title}</h3>
-          {/* <div className="product-price">{product.price}</div> */}
-          
-          {product.features && (
-            <ul className="product-features">
-              {product.features.map((feature, index) => (
-                <li key={index}>{feature}</li>
-              ))}
-            </ul>
-          )}
-          
+
+          <div className="product-price">
+            {/* ₹{product.price || 'N/A'} */}
+          </div>
+
           <div className="product-actions">
-            {/* <button className="btn-buy">Buy Now</button> */}
-            {(product.specifications || product.table) && (
-              <button 
-                className="btn-specs" 
+            {specsEntries.length > 0 && (
+              <button
+                className="btn-specs"
                 onClick={() => setShowSpecs(!showSpecs)}
               >
                 {showSpecs ? 'Hide Specs' : 'Show Specs'}
               </button>
             )}
           </div>
-          
-          {showSpecs && (product.specifications || product.table) && (
+
+          {showSpecs && specsEntries.length > 0 && (
             <div className="product-specs table-responsive">
               <table className="specs-table">
                 <thead>
@@ -49,16 +53,20 @@ const NewProductCard = ({ product }) => {
                     <th>Size</th>
                     <th>Diameter (mm)</th>
                     <th>Thickness (mm)</th>
-                    <th>Arbor (mm)</th>
+                    <th>Grit</th>
+                    <th>Material</th>
+                    <th>Max Speed</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {(product.specifications || product.table).map((spec, index) => (
+                  {specsEntries.map((spec, index) => (
                     <tr key={index}>
-                      <td>{spec.size}</td>
-                      <td>{spec.diameter}</td>
-                      <td>{spec.thickness}</td>
-                      <td>{spec.arbor}</td>
+                      <td>{spec.size || '-'}</td>
+                      <td>{spec.diameter || '-'}</td>
+                      <td>{spec.thickness || '-'}</td>
+                      <td>{spec.grit || '-'}</td>
+                      <td>{spec.material || '-'}</td>
+                      <td>{spec.max_speed || '-'}</td>
                     </tr>
                   ))}
                 </tbody>

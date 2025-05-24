@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import NewProductCard from '../components/NewProductCard';
 import SideCol from '../components/SideCol';
 import axios from 'axios';
-
+import { products4 } from '../data/data';
 function Properties() {
   const [activeFilter, setActiveFilter] = useState('*');
   const [isFiltering, setIsFiltering] = useState(false);
@@ -16,7 +16,7 @@ function Properties() {
     const fetchCategories = async () => {
       try {
         const response = await axios.get('https://trinoxabrasives.com/api/categories/');
-        setCategories(response.data);
+        setCategories(response.data.results);
       } catch (error) {
         console.error('Error fetching categories:', error);
       }
@@ -29,7 +29,8 @@ function Properties() {
     const fetchProducts = async () => {
       try {
         const response = await axios.get('https://trinoxabrasives.com/api/products/');
-        setProducts(response.data);
+         console.log("Products API response:", response.data.results);
+      setProducts(response.data.results); 
       } catch (error) {
         console.error('Error fetching products:', error);
       }
