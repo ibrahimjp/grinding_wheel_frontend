@@ -51,9 +51,9 @@ const CatalogCard = ({ products }) => {
                 <div className="features1">
                   <h3>Details</h3>
                   <ul>
-                    <li>Category: {product.category_name}</li>
+                    <li><b>Title: </b>{product.title}</li>
                     {/* <li>Price: ${product.price}</li> */}
-                    <li>Type: {product.product_type_display}</li>
+                    <li><b>Category: </b>{product.category_name}</li>
                   </ul>
                 </div>
               </div>

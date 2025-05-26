@@ -1,86 +1,95 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './uiVerseBtn.css';
 import './buyButtonUiVerse.css';
 import './ProductCardTable.css';
+
 function ProductCard({ product }) {
+  const specRows = product?.specs_summary?.["Other Specs"] || [];
 
   return (
     <div className="col-lg-4 col-md-6">
       <div className="item">
-        <a href="/property-details" className='image-container'>
-          <img
-            src={product.imgSrc}
-            alt="Reinforced Cut Off Wheel"
-            className="product-image"
-          />
-        </a>
-        <span className="category">Reinforced cutting</span>
-        <h4>
-          <a href="/property-details">REINFORCED CUT OFF WHEEL</a>
-        </h4>
+        <div className="product-card">
+          <div className="product-image">
+            <img src={product.image_url} alt={product.title} className="product-image" />
+          </div>
+          <div className="product-info">
+            <span className="category">{product.category_name || 'Reinforced cutting'}</span>
+            <h4>{product.title || 'REINFORCED CUT OFF WHEEL'}</h4>
+            <button
+              type="button"
+              className="uiVerseBtn"
+              data-bs-toggle="modal"
+              data-bs-target={`#modal-${product.id}`}
+            >
+              <p>Show Details</p>
+            </button>
+          </div>
+        </div>
 
-        <div className="main-button flex justify-between">
-          <button type="button" className="uiVerseBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            <p>Show chart</p>
-          </button>
+        {/* Modal */}
+        <div
+          className="modal fade"
+          id={`modal-${product.id}`}
+          tabIndex="-1"
+          aria-labelledby={`modalLabel-${product.id}`}
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-lg">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id={`modalLabel-${product.id}`}>
+                  {product.title} - Specifications
+                </h5>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
 
+              <div className="modal-body">
+                {product.features && (
+                  <>
+                    <ul>
+                      {product.features.map((feature, i) => (
+                        <li key={i}>✅ {feature}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+                {specRows.length > 0 && (
+                  <>
+                    <div className="table-responsive">
+                      <table
+                        
+                      >
+                        <thead className="table-dark">
+                          <tr>
+                            <th>Size</th>
+                            <th>Diameter (MM)</th>
+                            <th>Thickness (MM)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {specRows.map((row, index) => (
+                            <tr key={index}>
+                              <td>{row.size || '-'}</td>
+                              <td>{row.diameter || '-'}</td>
+                              <td>{row.thickness || '-'}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </>
+                )}
 
-          <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h1 className="modal-title fs-5" id="staticBackdropLabel">{product.title}</h1>
-                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div className="modal-body">
-                <div className="table-responsive">
-                  <table style={{ borderCollapse: "collapse", fontFamily: "Arial, sans-serif", textAlign: "center" }}>
-                    <thead>
-                      <tr style={{ backgroundColor: "#3d2b1f", color: "white" }}>
-                        <th style={{ padding: "10px", border: "1px solid #ccc" }}>Size</th>
-                        <th style={{ padding: "10px", border: "1px solid #ccc" }}>
-                          Diameter<br /> (in MM)
-                        </th>
-                        <th style={{ padding: "10px", border: "1px solid #ccc" }}>
-                          Thickness<br /> (in MM)
-                        </th>
-                        <th style={{ padding: "10px", border: "1px solid #ccc" }}>
-                          Arbor Hole<br /> (in MM)
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr style={{ backgroundColor: "#c6b7a5" }}>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>4"</td>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>107</td>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>1</td>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>16</td>
-                      </tr>
-                      <tr style={{ backgroundColor: "#c6b7a5" }}>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>5"</td>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>125</td>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>1.5</td>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>22.23</td>
-                      </tr>
-                      <tr style={{ backgroundColor: "#c6b7a5" }}>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>7"</td>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>180</td>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>1.8</td>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>22.23</td>
-                      </tr>
-                      <tr style={{ backgroundColor: "#c6b7a5" }}>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>14"</td>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>355</td>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>2.8</td>
-                        <td style={{ padding: "10px", border: "1px solid #ccc" }}>25.4</td>
-                      </tr>
-                    </tbody>
-                  </table>
-</div>
-                </div>
-                <div className="modal-footer">
-                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
+                {specRows.length === 0 && (
+                  <p>No specifications available.</p>
+                )}
+              </div>
+
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+                  Close
+                </button>
               </div>
             </div>
           </div>

@@ -9,6 +9,8 @@ import Contact from './Contact';
 import { products,products2,products3 } from '../data/data.js';
 import OtherItems from '../components/OtherItems';
 import SideCol from '../components/SideCol.jsx';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 // CSS imports (relative path goes up one level to access assets)
 import '../assets/css/animate.css';
 import '../assets/css/flex-slider.css';
@@ -22,7 +24,18 @@ import '../assets/js/isotope.min.js';
 import '../assets/js/owl-carousel.js';
 import './style.css';
 function Home() {
-
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('https://trinoxabrasives.com/api/products/');
+        setProducts(response.data.results);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+    fetchProducts();
+  },[])
   return (
     <div className="home-page">
       <Header />
@@ -44,18 +57,6 @@ function Home() {
             {products.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}
-            </div>
-            <h2>GRINDING DISC</h2>
-            <div className='row'>
-             { products2.map(product => (
-              <ProductCard key={product.id} product={product} />
-             ))}
-            </div>
-            <h2>Some Other Items</h2>
-            <div className='row'>
-            {products3.map(product => (
-                  <OtherItems key={product.id} product={product} />
-               ))}
             </div>
           </div>
         </div>

@@ -19,7 +19,7 @@ const NewProductCard = ({ product }) => {
             alt={product.title}
             className="img-fluid product-image"
             onError={(e) => {
-              e.target.src = '/placeholder.jpg'; // Fallback on error
+              e.target.src = '/placeholder.jpg'; 
             }}
           />
           <div className="property-category">
@@ -53,9 +53,6 @@ const NewProductCard = ({ product }) => {
                     <th>Size</th>
                     <th>Diameter (mm)</th>
                     <th>Thickness (mm)</th>
-                    <th>Grit</th>
-                    <th>Material</th>
-                    <th>Max Speed</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -64,9 +61,6 @@ const NewProductCard = ({ product }) => {
                       <td>{spec.size || '-'}</td>
                       <td>{spec.diameter || '-'}</td>
                       <td>{spec.thickness || '-'}</td>
-                      <td>{spec.grit || '-'}</td>
-                      <td>{spec.material || '-'}</td>
-                      <td>{spec.max_speed || '-'}</td>
                     </tr>
                   ))}
                 </tbody>
