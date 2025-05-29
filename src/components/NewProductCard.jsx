@@ -16,7 +16,7 @@ const NewProductCard = ({ product }) => {
         <div className="property-image">
           <img
             src={imageSrc}
-            alt={product.title}
+            alt={product.name}
             className="img-fluid product-image"
             onError={(e) => {
               e.target.src = '/placeholder.jpg'; 
@@ -28,7 +28,7 @@ const NewProductCard = ({ product }) => {
         </div>
 
         <div className="property-content">
-          <h3 className="product-title">{product.title}</h3>
+          <h3 className="product-title">{product.name}</h3>
 
           <div className="product-price">
             {/* ₹{product.price || 'N/A'} */}
@@ -46,13 +46,14 @@ const NewProductCard = ({ product }) => {
           </div>
 
           {showSpecs && specsEntries.length > 0 && (
-            <div className="product-specs table-responsive">
+            <div className="product-specs table-responsive" style={{overflowX: 'hidden'}}>
               <table className="specs-table">
                 <thead>
                   <tr>
                     <th>Size</th>
                     <th>Diameter (mm)</th>
                     <th>Thickness (mm)</th>
+                    <th>Grit &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -61,6 +62,7 @@ const NewProductCard = ({ product }) => {
                       <td>{spec.size || '-'}</td>
                       <td>{spec.diameter || '-'}</td>
                       <td>{spec.thickness || '-'}</td>
+                      <td>{spec.grit || '-'}</td>
                     </tr>
                   ))}
                 </tbody>

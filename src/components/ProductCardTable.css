@@ -150,53 +150,80 @@ Properties Style
 .properties .item .main-button {
   text-align: center;
 }
+/* ProductCardTable.css - Styles for the product specification table in the modal */
 
-/* Add this CSS to one of your CSS files, e.g., uiVerseBtn.css */
-
-/* Ensure the table doesn't overflow */
-.modal-body .product-spec-table {
-  /* This should already be handled by Bootstrap's modal-body,
-     but explicitly setting max-width can be a fallback */
-  max-width: 100%;
-  /* Allow column content to wrap if necessary, but this can make columns uneven */
-  /* table-layout: fixed; */ /* Only use this if you define column widths */
+/* Base styles for the table within the modal */
+.modal-body .table-responsive table {
+  width: 100%; /* Make table take full width of its responsive container */
+  border-collapse: collapse; /* Ensures borders are neat */
+  margin-bottom: 1rem; /* Adds some space below the table, consistent with Bootstrap */
 }
 
-/* Reduce padding and font size for table cells on smaller screens */
-@media (max-width: 576px) { /* Adjust breakpoint as needed, Bootstrap's 'sm' breakpoint */
-  .modal-body .product-spec-table th,
-  .modal-body .product-spec-table td {
-    padding: 6px; /* Reduced padding */
-    font-size: 12px; /* Reduced font size */
-    word-break: break-word; /* Allow long words to break */
+.modal-body .table-responsive table th,
+.modal-body .table-responsive table td {
+  border: 1px solid #dee2e6; /* Standard border color, similar to Bootstrap */
+  padding: 0.75rem; /* Default padding (Bootstrap's default is often 0.75rem) */
+  text-align: left; /* Align text to the left */
+  font-size: 1rem;  /* Default font size (Bootstrap's default is often 1rem) */
+  vertical-align: top; /* Aligns content to the top, useful for cells with varying content height */
+}
+
+/* Styles for the table header, using the .table-dark class from your JSX */
+.modal-body .table-responsive table thead.table-dark th {
+  color: #fff;
+  background-color: #343a40; /* Standard dark background */
+  border-color: #454d55;    /* Border color for dark header */
+}
+
+/* If you want all th elements to be dark by default without relying on thead class:
+.modal-body .table-responsive table th {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #454d55;
+}
+*/
+
+.modal-body .table-responsive{
+  overflow-x: hidden;
+}
+
+/* Alternating row colors as specified */
+.modal-body .table-responsive table tbody tr:nth-child(odd) {
+  background-color: #c6b7a5;
+}
+
+.modal-body .table-responsive table tbody tr:nth-child(even) {
+  background-color: #d9c7b4;
+}
+
+/* Styles for screens up to 785px wide */
+@media (max-width: 785px) {
+  .modal-body .table-responsive table th,
+  .modal-body .table-responsive table td {
+    font-size: 0.875rem; /* Reduced font size (e.g., 14px if base is 16px) */
+    padding: 0.5rem;    /* Reduced padding (e.g., 8px) */
+    /* If text wrapping is an issue, you can add:
+    word-break: break-word; */
   }
+  /* The .table-responsive class on the parent div will automatically
+     add horizontal scroll if the table content is wider than the container.
+     This keeps your table layout intact on smaller screens. */
+}
 
-  /* Adjust header line breaks if needed */
-  .modal-body .product-spec-table th br {
-      /* Maybe no change needed here, <br> already creates lines */
+/* Further adjustments for smaller screens (Bootstrap's 'sm' breakpoint is typically around 576px) */
+@media (max-width: 576px) {
+  .modal-body .table-responsive table th,
+  .modal-body .table-responsive table td {
+    font-size: 0.8rem;   /* Further reduced font size (e.g., 12px-13px) */
+    padding: 0.4rem;    /* Further reduced padding (e.g., 6px) */
   }
-
-   /* Further reduce padding for very small screens if necessary */
-   @media (max-width: 380px) { /* Example: extra small screen adjustment */
-       .modal-body .product-spec-table th,
-       .modal-body .product-spec-table td {
-           padding: 4px;
-           font-size: 11px;
-       }
-   }
 }
 
-/* Optional: Style for alternating row colors */
-.modal-body .product-spec-table tbody tr:nth-child(odd) {
-    background-color: #c6b7a5; /* Your original color */
+/* Adjustments for very small screens */
+@media (max-width: 380px) {
+  .modal-body .table-responsive table th,
+  .modal-body .table-responsive table td {
+    font-size: 0.75rem;  /* Smallest font size (e.g., 11px-12px) */
+    padding: 0.25rem;   /* Smallest padding (e.g., 4px) */
+  }
 }
-
-.modal-body .product-spec-table tbody tr:nth-child(even) {
-    background-color: #d9c7b4; /* A slightly different shade */
-}
-
-.modal-body .product-spec-table tbody tr {
-     background-color: #c6b7a5; /* If you prefer all rows the same */
-}
-
-

@@ -5,7 +5,6 @@ import './ProductCardTable.css';
 
 function ProductCard({ product }) {
   const specRows = product?.specs_summary?.["Other Specs"] || [];
-
   return (
     <div className="col-lg-4 col-md-6">
       <div className="item">
@@ -39,7 +38,7 @@ function ProductCard({ product }) {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id={`modalLabel-${product.id}`}>
-                  {product.title} - Specifications
+                  {product.name} - Specifications
                 </h5>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
@@ -57,14 +56,13 @@ function ProductCard({ product }) {
                 {specRows.length > 0 && (
                   <>
                     <div className="table-responsive">
-                      <table
-                        
-                      >
+                      <table>
                         <thead className="table-dark">
                           <tr>
                             <th>Size</th>
                             <th>Diameter (MM)</th>
                             <th>Thickness (MM)</th>
+                            <th>Grit(MM)</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -73,6 +71,7 @@ function ProductCard({ product }) {
                               <td>{row.size || '-'}</td>
                               <td>{row.diameter || '-'}</td>
                               <td>{row.thickness || '-'}</td>
+                              <td>{row.grit || '-'}</td>
                             </tr>
                           ))}
                         </tbody>

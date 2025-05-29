@@ -11,7 +11,7 @@ const CatalogCard = ({ products }) => {
           <div key={index} className="container1">
             <div className="header1">
               <div className="logo1">Trinox<sup>®</sup></div>
-              <div className="title1">{product.title || product.name}</div>
+              <div className="title1">{product.name}</div>
             </div>
 
             <div className="content1">
@@ -23,7 +23,7 @@ const CatalogCard = ({ products }) => {
               </div>
 
               <div className="info-section1">
-                <div className="table-container1 table-responsive">
+                <div className="table-container1">
                   {specs.length > 0 ? (
                     <table>
                       <thead>
